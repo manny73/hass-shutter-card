@@ -25,7 +25,7 @@ This card allows to open, close or set a shutter to the opening rate you want.
 | buttons_position | string | False | `left` | Set buttons on `left` or on `right` of the shutter
 | title_position | string | False | `top` | Set title on `top` or on `bottom` of the shutter
 | invert_percentage | boolean | False | `false` | Set it to `true` if your shutter is 100% when it is closed, and 0% when it is opened
-
+| invert_button_action | boolean | False | `false` | Set it to `true` for invert shutter command
 _Remark : you can also just give the entity ID (without to specify `entity:`) if you don't need to specify the other configurations._
 
 ### Sample
