@@ -36,7 +36,12 @@ class ShutterCard extends HTMLElement {
         if (entity && entity.invert_percentage) {
           invertPercentage = entity.invert_percentage;
         }
-          
+        
+        invertButtonAction = false;
+        if (entity && entity.invert_button_action) {
+          invertButtonAction = entity.invert_button_action;
+        }
+        
         let shutter = document.createElement('div');
 
         shutter.className = 'sc-shutter';
@@ -142,6 +147,8 @@ class ShutterCard extends HTMLElement {
                 switch (command) {
                   case 'up':
                       service = 'open_cover';
+                      if(invertButtonAction)                    
+                        service = 'stop_cover';
                       break;
                       
                   case 'down':
@@ -150,6 +157,8 @@ class ShutterCard extends HTMLElement {
                 
                   case 'stop':
                       service = 'stop_cover';
+                      if(invertButtonAction)                    
+                        service = 'open_cover';                    
                       break;
                 }
                 
